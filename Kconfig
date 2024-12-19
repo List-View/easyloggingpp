@@ -4,8 +4,6 @@
 #       Kconfig for easylogingpp
 #
 
-menu "Easylogingpp default compile configuration"
-
 menuconfig THIRDPART_EASYLOGINGPP_CONFIG_ENABLE
 	bool "Easylogingpp default compile configuration"
 	default y
@@ -14,4 +12,15 @@ menuconfig THIRDPART_EASYLOGINGPP_CONFIG_ENABLE
 			bool "Disable default easylogingpp log file(myeasylog.log)"
 			default y
 	endif
-endmenu
+
+	if THIRDPART_EASYLOGINGPP_CONFIG_ENABLE
+		config THIRDPART_EASYLOGINGPP_ELPP_THREAD_SAFE
+			bool "Enable thread safe"
+			default y
+	endif
+
+	if THIRDPART_EASYLOGINGPP_CONFIG_ENABLE
+		config THIRDPART_EASYLOGINGPP_ELPP_STL_LOGGING
+			bool "Enable STL logging"
+			default y
+	endif
