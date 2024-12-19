@@ -1,0 +1,17 @@
+# Author: Yuanhui He <heyuanhui1@360.cn>
+# Date: 2024/12/19
+# Description:
+#       Kconfig for easylogingpp
+#
+
+menu "Easylogingpp default compile configuration"
+
+menuconfig THIRDPART_EASYLOGINGPP_CONFIG_ENABLE
+	bool "Easylogingpp default compile configuration"
+	default y
+	if THIRDPART_EASYLOGINGPP_CONFIG_ENABLE
+		config THIRDPART_EASYLOGINGPP_ELPP_NO_DEFAULT_LOG_FILE
+			bool "Disable default easylogingpp log file(myeasylog.log)"
+			default y
+	endif
+endmenu
